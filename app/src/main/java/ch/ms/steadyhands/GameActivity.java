@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import javax.xml.transform.Result;
+
 public class GameActivity extends AppCompatActivity {
 
     private TextView timerText;
@@ -28,7 +30,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 // Start the new activity when the countdown is finished
-                Intent intent = new Intent(GameActivity.this, MainActivity.class);
+                Intent intent = new Intent(GameActivity.this, ResultActivity.class);
                 startActivity(intent);
                 finish();
             }
