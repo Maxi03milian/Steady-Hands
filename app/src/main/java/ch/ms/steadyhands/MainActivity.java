@@ -13,15 +13,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //get button with id "startButton"
-        Button startButton = (Button) findViewById(R.id.startButton);
-        //set onClickListener
+        //get start Button and add listener
+        Button startButton = findViewById(R.id.startButton);
         startButton.setOnClickListener(v -> startGame());
-
-
     }
 
+
     private void startGame() {
+        //Load GameActivity
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
