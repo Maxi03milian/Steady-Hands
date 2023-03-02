@@ -79,7 +79,13 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
         // Get angle value in degrees
         float roll = (float) Math.toDegrees(orientation[2]);
-        angleText.setText(String.valueOf(roll));
+        float pitch = (float) Math.toDegrees(orientation[1]);
+        float yaw = (float) Math.toDegrees(orientation[0]);
+
+        float combinedEval = Math.abs(roll) + Math.abs(pitch) + Math.abs(yaw);
+        angleText.setText(String.valueOf(combinedEval));
+
+
 
     }
 
