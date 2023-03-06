@@ -71,19 +71,9 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
                 // Update the countdown text view with the remaining time
                 timerText.setText(String.valueOf(millisUntilFinished / 1000 + 1) + " seconds");
             }
-
             @Override
             public void onFinish() {
-                //vibrate phone
-                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-                // Start the new activity when the countdown is finished
-                int result = scoreHelper.calculateScore(rotationValues);
-                Intent intent = new Intent(GameActivity.this, ResultActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("score", result);
-                intent.putExtras(bundle);
-                startActivity(intent);
-                finish();
+                loadResultActivity();
             }
         };
         // Start the countdown timer
@@ -128,6 +118,19 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         }
         rotationValues.add(combinedEval);
 
+    }
+
+    private void loadResultActivity(){
+        //vibrate phone
+        vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+        // Start the new activity when the countdown is finished
+        int result = scoreHelper.calculateScore(rotationValues);
+        Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("score", result);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        finish();
     }
 
     @Override
