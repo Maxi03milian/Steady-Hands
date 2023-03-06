@@ -11,7 +11,13 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.xml.transform.Result;
+
+import ch.ms.steadyhands.helper.ScoreHelper;
 
 public class GameActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -28,6 +34,12 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private float[] gravity = new float[3];
     private float[] geomagnetic = new float[3];
     private float[] orientation = new float[3];
+    float combinedEval = 500;
+
+    //Score evaluation
+    private Timer scoreCheckTimer;
+    private ArrayList<Float> rotationValues = new ArrayList<>();
+    ScoreHelper scoreHelper = new ScoreHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +48,21 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         timerText = findViewById(R.id.timerText);
         angleText = findViewById(R.id.timerText3);
 
+        // create timer and check rotation values every 100ms
+        scoreCheckTimer = new Timer();
+        scoreCheckTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                //add rotation values to array
+                addRotationValues();
+            }
+        }, 0, 100);
+
+        // Create timer for game countdown
         countDownTimer = new CountDownTimer(10000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
+
                 // Update the countdown text view with the remaining time
                 timerText.setText(String.valueOf(millisUntilFinished / 1000 + 1) + " seconds");
             }
@@ -46,7 +70,11 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
             @Override
             public void onFinish() {
                 // Start the new activity when the countdown is finished
+                int result = scoreHelper.calculateScore(rotationValues);
                 Intent intent = new Intent(GameActivity.this, ResultActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("score", result);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 finish();
             }
@@ -82,13 +110,18 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         float pitch = (float) Math.toDegrees(orientation[1]);
         float yaw = (float) Math.toDegrees(orientation[0]);
 
-        float combinedEval = Math.abs(roll) + Math.abs(pitch) + Math.abs(yaw);
+        combinedEval = Math.abs(roll) + Math.abs(pitch) + Math.abs(yaw);
         angleText.setText(String.valueOf(combinedEval));
-
-
-
     }
 
+
+    private void addRotationValues() {
+        if(combinedEval == 500){
+            return;
+        }
+        rotationValues.add(combinedEval);
+
+    }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
