@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private float[] gravity = new float[3];
     private float[] geomagnetic = new float[3];
     private float[] orientation = new float[3];
-    float combinedEval = 500;
+    float combinedEval = -1;
 
     //Score evaluation
     private Timer scoreCheckTimer;
@@ -113,11 +113,10 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
 
     private void addRotationValues() {
-        if(combinedEval == 500){
+        if(combinedEval == -1){
             return;
         }
         rotationValues.add(combinedEval);
-
     }
 
     private void loadResultActivity(){

@@ -34,7 +34,7 @@
             android:gravity="center"
             android:paddingTop="30dp"
             android:paddingBottom="80dp"
-            android:text="See how still you can keep your hands. Are you as shaky as a drugaddict or could you have been a doctor?"
+            android:text="See how still you can keep your hands. Are you as shaky as a drugaddict or could you have been a doctor? A lower Highscore is better."
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
