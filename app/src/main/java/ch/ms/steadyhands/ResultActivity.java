@@ -30,6 +30,19 @@ public class ResultActivity extends AppCompatActivity {
         //get score text view and set score
         TextView scoreText = findViewById(R.id.scoreText);
         scoreText.setText("Score: " + score);
+
+        TextView scoreDescText = findViewById(R.id.scoreDescText);
+        if(score < 2) {
+            scoreDescText.setText("WOW! Your skill to put your phone down is amazing!");
+        } else if(score < 40) {
+            scoreDescText.setText("Okay... You have my respect! Not bad.");
+        } else if(score < 100) {
+            scoreDescText.setText("Average...");
+        } else if(score < 200) {
+            scoreDescText.setText("Getting shaky...");
+        } else {
+            scoreDescText.setText("Stop doing drugs!");
+        }
     }
 
     private void backToMenu() {
