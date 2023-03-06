@@ -113,6 +113,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
 
     private void addRotationValues() {
+        //if no sensorChange happened, dont add value
         if(combinedEval == -1){
             return;
         }
