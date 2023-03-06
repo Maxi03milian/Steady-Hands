@@ -61,7 +61,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
                 //add rotation values to array
                 addRotationValues();
             }
-        }, 0, 100);
+        }, 200, 100);
 
         // Create timer for game countdown
         countDownTimer = new CountDownTimer(10000, 1000) {
