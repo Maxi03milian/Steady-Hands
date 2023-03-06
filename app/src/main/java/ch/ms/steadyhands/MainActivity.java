@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private void startGame() {
         //vibrate phone
         vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-
+        System.out.println("Vibrating: 500ms");
         //Load GameActivity
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);

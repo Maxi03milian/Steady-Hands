@@ -124,6 +124,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         sensorManager.unregisterListener(this);
         //vibrate phone
         vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+        System.out.println("Vibrating: 500ms");
         // Start the new activity when the countdown is finished
         int result = scoreHelper.calculateScore(rotationValues);
         Intent intent = new Intent(GameActivity.this, ResultActivity.class);
