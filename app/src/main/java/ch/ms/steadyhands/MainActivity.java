@@ -22,9 +22,13 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("Highscore", MODE_PRIVATE);
 
         //get highscore and display it
-        highscore = sharedPreferences.getInt("highscore", 0);
+        highscore = sharedPreferences.getInt("highscore", -1);
         TextView highscoreText = findViewById(R.id.highscoreText);
-        highscoreText.setText("Current highscore: " + highscore);
+        if(highscore == -1) {
+            highscoreText.setText("Current highscore: None");
+        } else {
+            highscoreText.setText("Current highscore: " + highscore);
+        }
 
         //get start Button and add listener
         Button startButton = findViewById(R.id.startButton);

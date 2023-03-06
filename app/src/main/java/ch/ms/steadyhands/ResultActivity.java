@@ -47,7 +47,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private void backToMenu() {
         //save highscore if it is higher than the old one
-        if(score < sharedPreferences.getInt("highscore", 0)) {
+        if(score < sharedPreferences.getInt("highscore", 0) || sharedPreferences.getInt("highscore", -1) == -1) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("highscore", score);
             editor.apply();
