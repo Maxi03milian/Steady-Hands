@@ -2,6 +2,7 @@ package ch.ms.steadyhands;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -9,6 +10,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,6 +27,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private TextView timerText;
     private TextView angleText;
     private CountDownTimer countDownTimer;
+    private Vibrator vibrator;
 
     //Sensor setup
     private SensorManager sensorManager;
@@ -47,6 +51,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         setContentView(R.layout.activity_game);
         timerText = findViewById(R.id.timerText);
         angleText = findViewById(R.id.timerText3);
+        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         // create timer and check rotation values every 100ms
         scoreCheckTimer = new Timer();
@@ -69,6 +74,8 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
             @Override
             public void onFinish() {
+                //vibrate phone
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
                 // Start the new activity when the countdown is finished
                 int result = scoreHelper.calculateScore(rotationValues);
                 Intent intent = new Intent(GameActivity.this, ResultActivity.class);
