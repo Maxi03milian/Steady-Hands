@@ -121,6 +121,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private void loadResultActivity(){
+        sensorManager.unregisterListener(this);
         //vibrate phone
         vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
         // Start the new activity when the countdown is finished
