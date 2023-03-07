@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     int highscore;
     private SharedPreferences sharedPreferences;
     private Vibrator vibrator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //get highscore and display it
         highscore = sharedPreferences.getInt("highscore", -1);
         TextView highscoreText = findViewById(R.id.highscoreText);
-        if(highscore == -1) {
+        if (highscore == -1) {
             highscoreText.setText("Current highscore: None");
         } else {
             highscoreText.setText("Current highscore: " + highscore);

@@ -71,6 +71,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
                 // Update the countdown text view with the remaining time
                 timerText.setText(String.valueOf(millisUntilFinished / 1000 + 1) + " seconds");
             }
+
             @Override
             public void onFinish() {
                 loadResultActivity();
@@ -114,13 +115,13 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
     private void addRotationValues() {
         //if no sensorChange happened, dont add value
-        if(combinedEval == -1){
+        if (combinedEval == -1) {
             return;
         }
         rotationValues.add(combinedEval);
     }
 
-    private void loadResultActivity(){
+    private void loadResultActivity() {
         sensorManager.unregisterListener(this);
         //vibrate phone
         vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));

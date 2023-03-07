@@ -32,13 +32,13 @@ public class ResultActivity extends AppCompatActivity {
         scoreText.setText("Score: " + score);
 
         TextView scoreDescText = findViewById(R.id.scoreDescText);
-        if(score < 2) {
+        if (score < 2) {
             scoreDescText.setText("WOW! Your skill to put your phone down is amazing!");
-        } else if(score < 40) {
+        } else if (score < 40) {
             scoreDescText.setText("Okay... You have my respect! Not bad.");
-        } else if(score < 100) {
+        } else if (score < 100) {
             scoreDescText.setText("Average...");
-        } else if(score < 200) {
+        } else if (score < 200) {
             scoreDescText.setText("Getting shaky...");
         } else {
             scoreDescText.setText("Stop doing drugs!");
@@ -47,7 +47,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private void backToMenu() {
         //save highscore if it is higher than the old one
-        if(score < sharedPreferences.getInt("highscore", 0) || sharedPreferences.getInt("highscore", -1) == -1) {
+        if (score < sharedPreferences.getInt("highscore", 0) || sharedPreferences.getInt("highscore", -1) == -1) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("highscore", score);
             editor.apply();
