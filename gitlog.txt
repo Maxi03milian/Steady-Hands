@@ -1,0 +1,155 @@
+commit 60092a6ebdcea79d0d45fa98f0ac9f7ac58ad7e5
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Tue Mar 7 09:20:23 2023 +0100
+
+    feat: marketing website
+    
+    website is in website folder
+
+commit 0e0c29e9594e9c4b2627daca4f531795625c87f2
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Tue Mar 7 08:23:54 2023 +0100
+
+    chore: removed angle display
+    
+    was for debugging
+
+commit e681a6fd584517ed4fe47bd41328ae173fd5493d
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 16:21:28 2023 +0100
+
+    chore: added console log for vibration
+
+commit ad62d327338289ee494fe123aae8215ef173ac19
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 16:10:49 2023 +0100
+
+    chore: unregistered sensors after game
+
+commit 48b14a6d670ea6b4833e50518fa0772b484eff49
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 14:42:33 2023 +0100
+
+    chore: changed main color
+
+commit 908b25854dfd89945c6157dca57c239ffff77c65
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 14:22:10 2023 +0100
+
+    feat: added custom app icon
+
+commit 60b4e3fd80a3757eab75369f03e8bbf9d9ab9b83
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 14:13:57 2023 +0100
+
+    chore: updated infoText in Main activity
+
+commit 22986358f56035052289dfc1139d7df0b2ecbf59
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 13:48:32 2023 +0100
+
+    chore: cleaned up gameactivity
+
+commit 8afc95c932a13797cf1b37532cf153aed801ddd6
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 13:35:01 2023 +0100
+
+    fix: issue saving highscore
+    
+    when highscore did not exist it did not safe it correctly
+
+commit d31dd82aba585dbaade30435a28460885a5643bb
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 12:57:33 2023 +0100
+
+    fix: delayed first rotation check
+    
+    Initial rotation check was causing issues when the game was running for the first time
+
+commit ce7f5f038afd21480e2e1d272460beeddede2fc3
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 10:59:34 2023 +0100
+
+    chore: updated score text
+
+commit 08bf9be2b78fe1beba953d58bf50b46ef8451060
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 09:47:36 2023 +0100
+
+    feat: added vibration
+
+commit e4472cc40e4704df5cdf07db8e59718464bf1a23
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 09:25:03 2023 +0100
+
+    feat: added highscore saving
+    
+    showing at main activity
+
+commit d7a6b7aa030188392788c7e106781c9b4405a7fc
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Mon Mar 6 09:08:46 2023 +0100
+
+    feat: added score calculatino
+    
+    very basic. first version
+
+commit b207318e1880a839d2cef9f2b40adf9a41beede7
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Thu Mar 2 09:39:03 2023 +0100
+
+    feat: added pitch and yaw
+    
+    might need to for a more accurate evaluation of stillness
+
+commit c98ac61c7811b89a6073e4dd6b6657d62b1e0cf5
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Thu Mar 2 09:30:40 2023 +0100
+
+    feat: basic roll reading
+    
+    currently showing on screen for debugging
+
+commit cbf1cbb835ac2de518f62fb375be05499e72485b
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 16:34:43 2023 +0100
+
+    feat: added basic UI "Post-game" View
+
+commit d699e2df48c87fdb15177559e8b29fdba43525a3
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 16:18:21 2023 +0100
+
+    feat: added basic countdown to "Game" View
+
+commit 41997608dc8506fd47f36c2fae49162e3878a553
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 16:07:00 2023 +0100
+
+    feat: changed default color
+
+commit fa637ceef047552b9bb079716cb517d4eb24410f
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 16:00:19 2023 +0100
+
+    feat: added basic UI "Game" View
+
+commit 97b70a147a44b801c61ff0a2e17bcd52201462ac
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 15:54:13 2023 +0100
+
+    feat: added UI "Menu" View
+
+commit 53048d237454c0f40562bc1d0f37b46a9e117011
+Author: Schmid Maximilian, GHR-OSA-NEX-31 <Maxi03milian@gmail.com>
+Date:   Wed Mar 1 14:40:46 2023 +0100
+
+    initial commit
+    
+    Android Studio Project setup
+
+commit 381886dbd8f40488402ae4ffb75658c084a0aee6
+Author: Maxi <46729527+Maxi03milian@users.noreply.github.com>
+Date:   Wed Mar 1 14:30:22 2023 +0100
+
+    Initial commit
