@@ -108,7 +108,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
         float yaw = (float) Math.toDegrees(orientation[0]);
 
         combinedEval = Math.abs(roll) + Math.abs(pitch) + Math.abs(yaw);
-        angleText.setText(String.valueOf(combinedEval));
+        //angleText.setText(String.valueOf(combinedEval));
     }
 
 
